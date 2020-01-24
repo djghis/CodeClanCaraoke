@@ -24,6 +24,11 @@ end
 
 def add_songs(song)
   @playlist.push(song)
-end 
+end
+
+def get_song_by_name(song_name)
+  result = @playlist.find{|song| song.title == song_name}
+  p result
+end
 
 end
