@@ -1,6 +1,6 @@
 class Songs
 
-attr_reader :title, :length :style
+attr_reader :title, :length, :style
 
 
 def initialize(title, length, style)
