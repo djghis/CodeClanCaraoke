@@ -28,7 +28,12 @@ end
 
 def get_song_by_name(song_name)
   result = @playlist.find{|song| song.title == song_name}
-  p result
+
+end
+
+def add_someone_new(new_guest)
+  return if @guests.count >= @capacity
+  add_someone(new_guest)
 end
 
 end

@@ -13,7 +13,7 @@ class TestRooms < Minitest::Test
 
     @guest1 = Guest.new("GG", 100, 38, "Rockstar")
     @guest2 = Guest.new("Natalie", 50, 33, "Love")
-    @guest3 =
+    @guest3 = Guest.new("Fraser", 70, 24, "Barbie Girl")
     @song1 = Songs.new("Rockstar", 2.23, "Rock")
     @song2 = Songs.new("Love", 2.45, "Balad")
     @room1 = Rooms.new("Love Birds", 2)
@@ -57,6 +57,15 @@ class TestRooms < Minitest::Test
       @room1.add_songs(@song2)
       result = @room1.get_song_by_name("Love")
       assert_equal(@song2, result)
+    end
+
+    def test_space_limit
+      @room1.add_someone_new(@guest1)
+      @room1.add_someone_new(@guest2)
+
+      @room1.add_someone_new(@guest3)
+
+      assert_equal(2, @room1.guests.count)
     end
 
 
