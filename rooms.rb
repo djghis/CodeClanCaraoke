@@ -22,4 +22,8 @@ def check_out(guest)
   @guests.delete(guest)
 end
 
+def add_songs(song)
+  @playlist.push(song)
+end 
+
 end
