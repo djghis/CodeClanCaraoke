@@ -11,4 +11,15 @@ def initialize(name, capacity)
   @guests = []
 end
 
+
+
+
+def add_someone(guest)
+  @guests << guest
+end
+
+def check_out(guest)
+  @guests.delete(guest)
+end
+
 end

@@ -11,4 +11,8 @@ def initialize(name, wallet, age, favorite_song)
 
 end
 
+
+
+
+
 end
