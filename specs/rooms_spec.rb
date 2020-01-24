@@ -60,10 +60,10 @@ class TestRooms < Minitest::Test
     end
 
     def test_space_limit
-      @room1.add_someone_new(@guest1)
-      @room1.add_someone_new(@guest2)
+      @room1.add_someone(@guest1)
+      @room1.add_someone(@guest2)
 
-      @room1.add_someone_new(@guest3)
+      @room1.add_someone(@guest3)
 
       assert_equal(2, @room1.guests.count)
     end

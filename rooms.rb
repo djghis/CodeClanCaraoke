@@ -15,7 +15,7 @@ end
 
 
 def add_someone(guest)
-  @guests << guest
+  @guests << guest if capacity_check
 end
 
 def check_out(guest)
@@ -31,9 +31,9 @@ def get_song_by_name(song_name)
 
 end
 
-def add_someone_new(new_guest)
-  return if @guests.count >= @capacity
-  add_someone(new_guest)
+def capacity_check
+  return @guests.count < @capacity
+
 end
 
 end
