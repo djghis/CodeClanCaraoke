@@ -1,5 +1,6 @@
 require('minitest/autorun')
 require('minitest/reporters')
+require('pry-byebug')
 Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 
 require_relative('../guest')
@@ -66,6 +67,14 @@ class TestRooms < Minitest::Test
       @room1.add_someone(@guest3)
 
       assert_equal(2, @room1.guests.count)
+    end
+
+    def test_guest_has_been_charged
+      @room1.add_someone(@guest1)
+      @room1.add_someone(@guest2)
+      assert_equal(20, @room1.till)
+      assert_equal(90, @guest1.wallet)
+      assert_equal(40, @guest2.wallet)
     end
 
 

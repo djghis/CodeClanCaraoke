@@ -9,5 +9,10 @@ class Building
     @entry_fee = 10
   end
 
+  # def charge_fee
+  #   @till += @entry_fee
+  #
+  # end
+
 
 end
