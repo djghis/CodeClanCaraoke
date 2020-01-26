@@ -6,7 +6,8 @@ Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 require_relative('../guest')
 require_relative('../rooms')
 require_relative('../songs')
-require_relative('../building')
+require_relative('../bar')
+require_relative('../drinks')
 
 class TestRooms < Minitest::Test
 
@@ -15,8 +16,9 @@ class TestRooms < Minitest::Test
     @guest1 = Guest.new("GG", 100, 38, "Rockstar")
     @guest2 = Guest.new("Natalie", 50, 33, "Love")
     @guest3 = Guest.new("Fraser", 70, 24, "Barbie Girl")
-    @song1 = Songs.new("Rockstar", 2.23, "Rock")
-    @song2 = Songs.new("Love", 2.45, "Balad")
+    @song1 = Songs.new("Rockstar", "2:23", "Rock")
+    @song2 = Songs.new("Love", "2:56", "Balad")
+    @song3 = Songs.new("Barbie Girl", "2.35", "Pop")
     @room1 = Rooms.new("Love Birds", 2)
     @room2 = Rooms.new("Elvis", 10)
 
@@ -77,6 +79,22 @@ class TestRooms < Minitest::Test
       assert_equal(40, @guest2.wallet)
     end
 
+    # def test_found_favorite_song__in_playlist
+    # @room1.add_songs(@song1)
+    # @room1.add_songs(@song2)
+    # @room1.add_songs(@song3)
+    # # binding.pry
+    # @room1.add_someone(@guest2)
+    # @room1.add_someone(@guest3)
+    # @room1.happy_to_find_favorite_song(@guest3, @song3)
+    #   result = @guest3.found_favorite_song
+    #   assert_equal("OMG I love This song!", result)
+    # end
+#
+
+def test_playlist_length
+  assert_equal("7:54", @playlist.playlist_length)
+end
 
 
 end

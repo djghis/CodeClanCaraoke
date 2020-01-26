@@ -32,7 +32,7 @@ def add_songs(song)
 end
 
 def get_song_by_name(song_name)
-  result = @playlist.find{|song| song.title == song_name}
+@playlist.find{|song| song.title == song_name}
 
 end
 
@@ -41,9 +41,12 @@ def capacity_check
 
 end
 
-# def charge_fee(guest)
-#   pay_fee(guest)
-#   @till += @entry_fee
+# def happy_to_find_favorite_song(guest, song)
+#
+#   guest.found_favorite_song if get_song_by_name(song)
+# end
+
+# def playlist_length
 #
 # end
 
